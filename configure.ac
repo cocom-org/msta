@@ -30,7 +30,7 @@ AC_CHECK_TYPES([ptrdiff_t])
 AC_FUNC_ERROR_AT_LINE
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS([pow])
+AC_CHECK_FUNCS([pow memmove memset strerror])
 
 AC_TYPE_SIGNAL
 

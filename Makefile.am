@@ -1,16 +1,26 @@
-# Cygwin can not find dll without changing PATH
-PATH := ${PATH}:../AMMUNITION/.libs
+AUTOMAKE_OPTIONS = subdir-objects
 
 bin_PROGRAMS = msta
 msta_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c\
 	       gen-comm.h gen-comm.c output.h output.c contexts.h contexts.c\
                relation.h relation.c lr-sets.h lr-sets.c lr.h lr.c\
                regular.h regular.c la-trie.h la-trie.c descript.h descript.c\
-               parser.h parser.c gen.h gen.c main.c
-nodist_msta_SOURCES = yacc.c ird.c ird.h
-CLEANFILES = yacc.c ird.c ird.h
-msta_CFLAGS = -I$(srcdir)/../AMMUNITION
-msta_LDFLAGS = -static ../AMMUNITION/libcocom.la
+               parser.h parser.c gen.h gen.c main.c \
+               AMMUNITION/vlobject.c \
+               AMMUNITION/hashtab.c \
+               AMMUNITION/allocate.c \
+               AMMUNITION/objstack.c \
+               AMMUNITION/position.c \
+               AMMUNITION/errors.c \
+               AMMUNITION/bits.c \
+               AMMUNITION/ticker.c \
+               AMMUNITION/commline.c \
+               ird.c ird.h
+
+nodist_msta_SOURCES = yacc.c
+CLEANFILES = yacc.c
+msta_CFLAGS = -I$(srcdir)/AMMUNITION
+msta_LDFLAGS = -static
 dist_doc_DATA = msta.txt msta.info msta.html msta-1.html msta-2.html msta-3.html\
 	        msta-4.html msta-5.html msta-6.html msta-7.html msta-8.html msta-9.html\
 	        msta.pdf msta.dvi msta.ps
