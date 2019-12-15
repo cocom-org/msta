@@ -3,7 +3,6 @@
 
 AC_PREREQ([2.69])
 AC_INIT([Msta], 0.97, [vmakarov@gcc.gnu.org])
-LT_INIT
 AC_CONFIG_AUX_DIR([.])
 AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_HEADERS([config.h])
