@@ -20,7 +20,6 @@ msta_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c\
 nodist_msta_SOURCES = yacc.c
 CLEANFILES = yacc.c
 msta_CFLAGS = -I$(srcdir)/AMMUNITION
-msta_LDFLAGS = -static
 dist_doc_DATA = msta.txt msta.info msta.html msta-1.html msta-2.html msta-3.html\
 	        msta-4.html msta-5.html msta-6.html msta-7.html msta-8.html msta-9.html\
 	        msta.pdf msta.dvi msta.ps
